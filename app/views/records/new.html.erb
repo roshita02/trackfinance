@@ -1,0 +1,7 @@
+<h1> Add a record </h1>
+<%= simple_form_for Record.new do |record| %>
+  <%= record.input :title %>
+  <%= record.input :date %>
+  <%= record.input :amount %>
+  <%= record.submit 'Add record' %>
+<% end %>
