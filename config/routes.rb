@@ -12,6 +12,4 @@ Rails.application.routes.draw do
 
   delete '/records/:id/delete/', to: 'records#destroy', as: :record
 #  delete '/records/:id/delete', to: 'records#destroy'
-
-  resources :posts
 end
