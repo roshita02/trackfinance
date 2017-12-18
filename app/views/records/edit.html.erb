@@ -1,0 +1,7 @@
+<h1> Edit record </h1>
+<%= simple_form_for @record, url: edit_record_path do |record| %>
+  <%= record.input :title %>
+  <%= record.input :date %>
+  <%= record.input :amount %>
+  <%= record.submit 'Edit record' %>
+<% end %>
