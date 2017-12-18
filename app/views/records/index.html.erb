@@ -1,1 +1,27 @@
 <h1> Track your finance </h1>
+<br>
+<%= link_to 'Add a record', new_record_path %>
+<br><br>
+
+<h3> Balance: <%= @balance %> </h3>
+<h3> Debt : <%= @debt %></h3>
+<h3> Total amount : <%= @total %> </h3>
+  <br>
+<table>
+  <tr>
+    <th> Title </th>
+    <th> Date </th>
+    <th> Amount </th>
+    <th> Action </th>
+  </tr>
+  <% @records.each do |record| %>
+    <tr>
+        <td> <%= record.title %> </td>
+        <td> <%= record.date %> </td>
+        <td> <%= record.amount %> </td>
+        <td>
+          <%= link_to 'Edit', edit_record_path(record) %>
+            <%= link_to 'Delete', record_path(record), method: :delete %>
+        </td>
+    </tr>
+  <% end %>
