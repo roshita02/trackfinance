@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :record do
     title "Test expense"
-    date "2017-12-25"
+    date Time.new(2017,12,25)
     amount "50000"
   factory :invalid_record do
-    amount "cant be blank"
+    title "abc"
   end
 end
 end

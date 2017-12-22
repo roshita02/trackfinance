@@ -8,8 +8,11 @@ class RecordsController < ApplicationController
 
   def create
     @records = Record.create(record_params)
-    redirect_to root_path
-
+    if @records.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def new
