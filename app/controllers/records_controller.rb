@@ -25,7 +25,13 @@ class RecordsController < ApplicationController
 
   def update
     @record = Record.find(params[:id])
-    redirect_to root_path if @record.update(record_params)
+    @record.update(record_params)
+    if @record.valid?
+        redirect_to root_path
+    else
+      render :edit
+    end
+
   end
 
   def destroy
